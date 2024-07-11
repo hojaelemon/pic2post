@@ -1,0 +1,7 @@
+Django
+django-environ
+mysqlclient
+pytz
+requests
+urllib3
+gunicorn

@@ -16,6 +16,19 @@ SECRET_KEY = env("SECRET_KEY")
 ASGI_APPLICATION = "server.asgi.application"
 DEBUG = env("DEBUG")
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost"]
+
+# file
+ROOT_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
+STATIC_ROOT = os.path.join(BASE_DIR, "frontend", "static")
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploadImg")
+
+STATIC_URL = "/static/"
+
+MEDIA_URL = "/uploadImg/"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,13 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'generator',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

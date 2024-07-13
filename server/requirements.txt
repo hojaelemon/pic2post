@@ -5,3 +5,5 @@ pytz
 requests
 urllib3
 gunicorn
+watchdog
+openai

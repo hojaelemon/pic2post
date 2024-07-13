@@ -12,6 +12,7 @@ env = environ.Env(
 # reading .env file
 environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
+OPENAI_API_KEY = env("OPENAI_API_KEY")
 SECRET_KEY = env("SECRET_KEY")
 ASGI_APPLICATION = "server.asgi.application"
 DEBUG = env("DEBUG")
